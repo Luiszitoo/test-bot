@@ -4,7 +4,7 @@
   "description": "Test bot",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "tsc & node out/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/yusshu/test-bot",
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^14.0.13",
+    "@types/node-fetch": "^2.5.7",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "typescript": "^3.9.5"
   }
 }

@@ -1,7 +1,10 @@
-const router = require('express').Router();
-const userCache = require('../user/user.cache');
-const userController = require('../user/user.controller');
-const { validate } = require('../user/user.validator');
+import express from 'express';
+import UserController from '../user/user.controller';
+import MongoUserController from '../user/mongo.user.controller';
+import validate from '../user/user.validator';
+
+const router = express.Router();
+const userController : UserController = new MongoUserController();
 
 router.get('/', async (req, res) => res.json(await userController.allUsers()));
 
@@ -18,17 +21,7 @@ router.post('/update', async (req, res) => {
     return;
   }
 
-  if (userCache.get(body._id)) {
-    userCache.update(body);
-    res.json(userCache.values);
-    return;
-  }
-
-  let value = await userController.saveUser(body);
-
-  if (value) {
-    userCache.update(value);
-  }
+  await userController.saveUser(body);
 
   res.json(await userController.allUsers());
 
@@ -46,7 +39,8 @@ router.get('/find/:id', async (req, res) => {
     return;
   }
 
-  let found = await userCache.getOrLoad(id);
+  let found = await userController.findById(id);
+
   if (found) {
     res.json(found);
     return;
@@ -56,4 +50,4 @@ router.get('/find/:id', async (req, res) => {
 
 });
 
-module.exports = router;
+export default router;

@@ -1,8 +1,10 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+import Discord from 'discord.js';
+import userFetcher from './backend/user.fetch.controller';
 
-const Discord = require('discord.js');
 const client = new Discord.Client();
-const userFetcher = require('./backend/user.fetch.controller');
+
+dotenv.config();
 
 client.on('ready', () => console.log(`Logged in as ${client.user.tag}`));
 
