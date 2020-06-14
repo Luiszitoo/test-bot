@@ -1,0 +1,24 @@
+{
+  "name": "bot-disc",
+  "version": "0.1.0",
+  "description": "Test bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusshu/test-bot.git"
+  },
+  "author": "yusshu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yusshu/test-bot/issues"
+  },
+  "homepage": "https://github.com/yusshu/test-bot",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0"
+  }
+}

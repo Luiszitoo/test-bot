@@ -1,0 +1,26 @@
+{
+  "name": "bot-api",
+  "version": "0.1.0",
+  "description": "Bot api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusshu/test-bot.git"
+  },
+  "author": "yusshu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yusshu/test-bot/issues"
+  },
+  "homepage": "https://github.com/yusshu/test-bot",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18",
+    "morgan": "^1.10.0"
+  }
+}
